@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval ="3">
+    <Properties>
+        <Property name ="filename">logs/logs.log</Property>
+        <Property name = "basePattern">%d{ABSOLUTE} [%-5p] (%F:%L) - %m%n</Property>
+    </Properties>
+    <appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="" />
+        </Console>
+        <File name="FILE" fileName="${filename}">
+            <ParrenLayout pattern="${basePattern}"/>
+        </File>
+    </appenders>
+    <loggers>
+        <root level="warn">
+            <appender-ref ref="FILE"/>
+        </root>
+    </loggers>
+</Configuration>
